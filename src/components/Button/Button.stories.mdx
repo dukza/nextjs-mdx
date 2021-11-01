@@ -1,0 +1,114 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { config, withDesign } from "storybook-addon-designs";
+
+import Button from "./Button.jsx";
+
+<Meta
+  title="MDX/Button"
+  component={Button}
+  parameters={{
+    backgrounds: {
+      values: [
+        { name: "red", value: "#f00" },
+        { name: "green", value: "#0f0" },
+        { name: "blue", value: "#00f" },
+      ],
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: "text" },
+      defaultValue: "Typo",
+    },
+    onClick: {
+      table: { disable: true },
+    },
+    outline: {
+      table: { disable: true },
+      defaultValue: false,
+    },
+    round: {
+      defaultValue: false,
+    },
+    state: {
+      defaultValue: "rest",
+    },
+    size: {
+      defaultValue: "md",
+    },
+    transparent: {
+      table: { disable: true },
+    },
+    semantic: {
+      defaultValue: "primary",
+    },
+  }}
+/>
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+Let's define a story for our `Button` component:
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+<ArgsTable of={Button} />
+
+<Canvas>
+  <Story
+    name="Primary"
+    parameters={{
+      design: config({
+        type: "figma",
+        url:
+          "https://www.figma.com/file/2Zbw6CNs95sksAPmhdPbKQ/Storybook-Test?node-id=3%3A86",
+      }),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default"
+    parameters={{
+      design: config({
+        type: "figma",
+        url:
+          "https://www.figma.com/file/2Zbw6CNs95sksAPmhdPbKQ/Storybook-Test?node-id=3%3A86",
+      }),
+    }}
+    args={{
+      outline: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

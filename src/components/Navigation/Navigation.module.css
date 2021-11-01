@@ -1,0 +1,15 @@
+/* @import url("./../../../public/css/storybook.css"); */
+@import url("./../../../public/css/styles.css");
+@import url("./../../../public/icomoon/style.css");
+
+@media (min-width: 1080px){
+  .navbar{
+    min-width: 1360px;
+  }  
+  .navbar-nav{
+    margin-top: 0;
+  }
+  .nav-item{
+    margin-bottom: 0;
+  }
+}
